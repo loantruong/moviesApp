@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-8">
-      <form class="form-inline" ng-submit="$ctrl.getMovies(ctrl.searchMovie)">
-        <input class="form-control mr-sm-2" type="search" ng-model="ctrl.searchMovie" name="searchMovie" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">trouver un film</button>
+    <div class="col-12 mb-3">
+      <form class="form-inline justify-content-center" ng-submit="$ctrl.getMovies(ctrl.searchMovie)">
+        <input class="form-control mr-sm-2" type="search" ng-model="ctrl.searchMovie" name="searchMovie" placeholder="A la recherche d'un film ?" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">trouver le</button>
       </form>
     </div>
   </div>
@@ -20,7 +20,7 @@
         <p>{{movie.overview}}</p>
         <input type="text" type="number" name="id" ng-model="id" value="{{movie.id}}">
         <button class="btn btn-secondary" ng-click="$ctrl.displayDetails(id)">voir plus d'information</button>
-        <button class="btn btn-success">Ajouter à ma liste</button>
+        <button class="btn btn-outline-success">Ajouter à ma liste</button>
       </div>
       <hr>
     </div>

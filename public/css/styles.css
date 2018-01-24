@@ -1,4 +1,27 @@
+body {
+  background-color: black;
+  color: white;
+}
+
 nav .bg-black {
-  color: black !important;
+  background-color: black;
+}
+
+h1, h2 {
+  font-family: 'Bevan', cursive;
+}
+
+header > .container-fluid {
+  padding: 0;
+}
+
+header > .container-fluid .jumbotron {
+  background: url(../img/bg-header.jpg) no-repeat center;
+  background-size: cover;
+  border-radius: inherit;
+}
+
+.img-picture {
+  border: 1px solid #6c6c6c;
 }
 /*# sourceMappingURL=styles.css.map */

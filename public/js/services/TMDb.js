@@ -16,7 +16,7 @@ angular
     this.getPopular = () => {
       let defer = $q.defer();
       $http.get('/home').then((response) => {
-        defer.resolve(response.data);
+        defer.resolve(response.data.results);
       }).catch((error) => {
         defer.reject(error);
       })

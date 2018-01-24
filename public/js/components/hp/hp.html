@@ -1,20 +1,25 @@
-<header-app></header-app>
-<div class="container-fluid">
-  <div class="jumbotron bg">
-    <h1>Movies</h1>
-  </div>
-</div>
-<div class="container">
-  <h2>Liste des films à mettre</h2>
-  <div class="row">
-    <div class="col" ng-repeat="movie in $ctrl.movies">
-      <h3>{{movie.title}}</h3>
-      <p>date de sortie : {{movie.release_date}}</p>
-      <p>genre : {{movie.genre_ids}}</p>
+<nav-app></nav-app>
+<header>
+  <div class="container-fluid">
+    <div class="jumbotron bg">
+      <h1>Bienvenue</h1>
     </div>
   </div>
-</div>
-<div class="container">
-  <h2>vous ne trouvez pas votre film ?</h2>
+</header>
+<div class="container-fluid mb-3">
   <search></search>
+</div>
+</div>
+<div class="container-fluid">
+  <h2>Nos films les plus populaires</h2>
+  <div class="row">
+    <div class="col-3 mb-3 mt-2" ng-repeat="movie in $ctrl.popularMovies">
+      <div>
+        <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" class="img-fluid img-picture" alt="{{movie.title}}">
+        <h3>{{movie.title}}</h3>
+        <p>note du public : {{movie.vote_average}}</p>
+        <button class="btn btn-outline-success">en savoir plus</button>
+      </div>
+    </div>
+  </div>
 </div>

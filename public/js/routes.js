@@ -8,7 +8,7 @@ angular
         url: '/home',
         component: 'hp',
         resolve: {
-          popularMovies: (TMDbService) => TMDbService.getPopular().$promise
+          popularMovies: (TMDbService) => TMDbService.getPopular()
         }
       })
       .state('details', {
@@ -18,7 +18,7 @@ angular
           detailsMovie: (TMDbService, $transition$) => {
             return TMDbService.getDetails({
               id: $transition$.params().id
-            }).$promise;
+            });
           }
         }
       })

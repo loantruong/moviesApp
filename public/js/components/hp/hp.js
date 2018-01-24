@@ -11,7 +11,7 @@ angular
       'ngInject';
 
       this.$onInit = () => {
-        $log.info('home component init');
+        $log.info('home component init', this.popularMovies);
       };
     }
   });
