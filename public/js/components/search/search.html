@@ -8,15 +8,21 @@
     </div>
   </div>
   <div class="movies">
-    <div class="row">
-      <div class="col" ng-repeat="movie in $ctrl.movies">
+    <div class="row my-3" ng-repeat="movie in $ctrl.movies">
+      <div class="col-6">
         <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="">
+      </div>
+      <div class="col-6">
         <h2>{{movie.title}}</h2>
         <p>date de sortie : {{movie.release_date}}</p>
-        <p>genre : genre : {{movie.genre_ids}}</p>
+        <p>genre : {{movie.genre_ids}}</p>
         <p>résumé : </p>
         <p>{{movie.overview}}</p>
+        <input type="text" type="number" name="id" ng-model="id" value="{{movie.id}}">
+        <button class="btn btn-secondary" ng-click="$ctrl.displayDetails(id)">voir plus d'information</button>
+        <button class="btn btn-success">Ajouter à ma liste</button>
       </div>
+      <hr>
     </div>
   </div>
 </div>

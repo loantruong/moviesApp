@@ -16,6 +16,16 @@ angular
         }).catch((error) => {
           this.error = error;
         });
-      }
+      };
+
+      this.displayDetails = (id) => {
+        id = parseInt(id, 10)
+        TMDbService.getDetails({id}).then((data) => {
+          this.detailsMovies = data;
+          $state.go('details');
+        }).catch((error) => {
+          this.error = error;
+        });
+      };
     }
   });

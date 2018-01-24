@@ -4,16 +4,14 @@ angular
     templateUrl: '/js/components/hp/hp.html',
 
     bindings: {
-      movies: '<'
+      popularMovies: '<'
     },
 
-    controller: function (TMDbService, $log) {
+    controller: function ($log) {
       'ngInject';
 
       this.$onInit = () => {
         $log.info('home component init');
-
       };
-
     }
   });

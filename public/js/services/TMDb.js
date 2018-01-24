@@ -12,4 +12,24 @@ angular
       })
       return defer.promise;
     }
+
+    this.getPopular = () => {
+      let defer = $q.defer();
+      $http.get('/home').then((response) => {
+        defer.resolve(response.data);
+      }).catch((error) => {
+        defer.reject(error);
+      })
+      return defer.promise;
+    }
+
+    this.getDetails = (id) => {
+      let defer = $q.defer();
+      $http.get('/details', { params: id }).then((response) => {
+        defer.resolve(response.data);
+      }).catch((error) => {
+        defer.reject(error);
+      })
+      return defer.promise;
+    }
   })

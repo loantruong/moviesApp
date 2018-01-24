@@ -4,7 +4,7 @@ angular
     templateUrl: '/js/components/searchResult/searchResult.html',
 
     bindings: {
-      movies: '<'
+      detailsMovie: '<'
     },
 
     controller: function ($log) {

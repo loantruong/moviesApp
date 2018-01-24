@@ -1,8 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const models = require('./server/models');
 var request = require('request');
 const path = require('path');
 const http = require('http');
+
+const apiMoviesRouter = require('./server/routes/apiMovies');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -32,6 +35,20 @@ function listFilm(movie, expressResponse) {
   });
 }
 
+function detailsMovie(id, expressResponse) {
+  request({
+    url: `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`,
+    method: 'GET',
+    limit: 10
+  }, function (err, res, body) {
+    if (err) {
+      return expressResponse.json(err);
+    } else {
+      return expressResponse.json(JSON.parse(body));
+    }
+  });
+}
+
 function popularMovies(expressResponse) {
   request({
     url: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`,
@@ -46,14 +63,21 @@ function popularMovies(expressResponse) {
   });
 }
 
-app.get('/', function (req, res, next) {
+app.get('/home', function (req, res, next) {
   popularMovies(res);
 });
 
-app.get('/search', function (req, res, next) {
+/* app.get('/search', function (req, res, next) {
   let searchMovie = req.query.searchMovie;
   listFilm(searchMovie, res);
+}) */
+
+app.get('/details', function (req, res, next) {
+  let id = req.query.id;
+  detailsMovie(id, res);
 })
+
+app.use('/', apiMoviesRouter(express));
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
