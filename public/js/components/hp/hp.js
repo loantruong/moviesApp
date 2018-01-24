@@ -3,7 +3,7 @@ angular
 
     templateUrl: '/js/components/hp/hp.html',
 
-    controller: function ($log) {
+    controller: function (TMDbService, $log) {
       'ngInject';
 
       this.$onInit = () => {

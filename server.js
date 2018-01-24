@@ -16,11 +16,10 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/vendors', express.static(path.join(__dirname, 'node_modules')));
 
-/* API */
+/* API TMDb */
 const API_KEY = 'a4d43df3db9fe894fda8b274ba849945';
 
 function listFilm(movie, expressResponse) {
-
   request({
     url: `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${movie}`,
     method: 'GET',
@@ -32,17 +31,14 @@ function listFilm(movie, expressResponse) {
       return expressResponse.json(JSON.parse(body));
     }
   });
-  
 }
 
 app.get('/', function (req, res, next) {
   res.render('index');
 });
 
-
 app.get('/search', function (req, res, next) {
-  let searchMovie = req.query.query;
-
+  let searchMovie = req.query.searchMovie;
   listFilm(searchMovie, res);
 })
 
