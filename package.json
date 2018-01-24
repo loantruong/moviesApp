@@ -1,0 +1,29 @@
+{
+  "name": "bordeaux-0917-checkpoint-5-js",
+  "version": "1.0.0",
+  "description": "Bordeaux 09/2017 Final JS checkpoint",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WildCodeSchool/bordeaux-0917-checkpoint-5-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WildCodeSchool/bordeaux-0917-checkpoint-5-js/issues"
+  },
+  "homepage": "https://github.com/WildCodeSchool/bordeaux-0917-checkpoint-5-js#readme",
+  "dependencies": {
+    "angular": "^1.6.8",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0",
+    "express": "^4.16.2",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  }
+}
