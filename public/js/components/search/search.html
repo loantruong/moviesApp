@@ -10,6 +10,7 @@
   <div class="movies">
     <div class="row">
       <div class="col" ng-repeat="movie in $ctrl.movies">
+        <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="">
         <h2>{{movie.title}}</h2>
         <p>date de sortie : {{movie.release_date}}</p>
         <p>genre : genre : {{movie.genre_ids}}</p>

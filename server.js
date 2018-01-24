@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 var request = require('request');
 const path = require('path');
 const http = require('http');
-const imdb = require('imdb-api');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -33,8 +32,22 @@ function listFilm(movie, expressResponse) {
   });
 }
 
+function popularMovies(expressResponse) {
+  request({
+    url: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`,
+    method: 'GET',
+    limit: 10
+  }, function (err, res, body) {
+    if (err) {
+      return expressResponse.json(err);
+    } else {
+      return expressResponse.json(JSON.parse(body));
+    }
+  });
+}
+
 app.get('/', function (req, res, next) {
-  res.render('index');
+  popularMovies(res);
 });
 
 app.get('/search', function (req, res, next) {
