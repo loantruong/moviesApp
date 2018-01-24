@@ -1,17 +1,17 @@
 angular
-  .module('app').component('resultSearch', {
+  .module('app').component('detailsMovie', {
 
-    templateUrl: '/js/components/searchResult/searchResult.html',
+    templateUrl: '/js/components/details/details.html',
 
     bindings: {
       detailsMovie: '<'
     },
 
-    controller: function ($log) {
+    controller: function ($log, $state) {
       'ngInject';
 
       this.$onInit = () => {
-        $log.info('searchResult component init');
+        $log.info('searchResult component init', this.detailsMovie);
       };
     }
   });

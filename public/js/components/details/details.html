@@ -1,7 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-8 offset-md-2">
-      {{ctrl.detailsMovie.original_title}}
+      <h2>Détails du film : {{$ctrl.detailsMovie.original_title}}</h2>
+      <p>{{$ctrl.detailsMovie.tagline}}</p>
+      <img src="https://image.tmdb.org/t/p/w500/{{$ctrl.detailsMovie.poster_path}}" alt="">
+      <p>résumé : {{$ctrl.detailsMovie.overview}}</p>
     </div>
   </div>
 </div>

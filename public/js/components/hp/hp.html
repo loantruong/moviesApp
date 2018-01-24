@@ -18,8 +18,9 @@
         <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" class="img-fluid img-picture" alt="{{movie.title}}">
         <h3>{{movie.title}}</h3>
         <p>note du public : {{movie.vote_average}}</p>
-        <button class="btn btn-outline-success">en savoir plus</button>
+        <button class="btn btn-outline-success" ng-click="$ctrl.displayDetails(movie.id)">en savoir plus</button>
       </div>
     </div>
   </div>
+  <details></details>
 </div>

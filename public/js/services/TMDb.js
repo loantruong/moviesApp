@@ -25,7 +25,7 @@ angular
 
     this.getDetails = (id) => {
       let defer = $q.defer();
-      $http.get('/details', { params: id }).then((response) => {
+      $http.get(`/details/${id}`).then((response) => {
         defer.resolve(response.data);
       }).catch((error) => {
         defer.reject(error);

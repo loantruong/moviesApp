@@ -7,11 +7,17 @@ angular
       popularMovies: '<'
     },
 
-    controller: function ($log) {
+    controller: function (TMDbService, $log, $state) {
       'ngInject';
 
       this.$onInit = () => {
         $log.info('home component init', this.popularMovies);
+      };
+
+      this.displayDetails = (id) => {
+        $state.go('details', {
+          id: id
+        });
       };
     }
   });

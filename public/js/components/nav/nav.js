@@ -1,7 +1,7 @@
 angular
-  .module('app').component('headerApp', {
+  .module('app').component('navApp', {
 
-    templateUrl: '/js/components/header/header.html',
+    templateUrl: '/js/components/nav/nav.html',
 
     controller: function (TMDbService, $log, $state) {
       'ngInject';
@@ -9,14 +9,5 @@ angular
       this.$onInit = () => {
         $log.info('navbar component init');
       };
-
-      /* this.getMovies = (searchMovie) => {
-        TMDbService.get({ searchMovie }).then((data) => {
-          this.movies = data.results;
-          $state.go('resultSearch');
-        }).catch((error) => {
-          this.error = error;
-        });
-      } */
     }
   });

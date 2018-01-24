@@ -5,7 +5,6 @@ var request = require('request');
 const path = require('path');
 const http = require('http');
 
-/* const apiMoviesRouter = require('./server/routes/apiMovies'); */
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -72,12 +71,10 @@ app.get('/search', function (req, res, next) {
   listFilm(searchMovie, res);
 })
 
-app.get('/details', function (req, res, next) {
-  let id = req.query.id;
+app.get('/details/:id', function (req, res, next) {
+  let id = req.params.id;
   detailsMovie(id, res);
 })
-
-/* app.use('/', apiMoviesRouter(express)); */
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);

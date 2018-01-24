@@ -13,8 +13,8 @@ angular
       })
       .state('details', {
         url: '/details/:id',
-        component: 'details',
-        resolve: {    
+        component: 'detailsMovie',
+        resolve: { 
           detailsMovie: (TMDbService, $transition$) => {
             return TMDbService.getDetails({
               id: $transition$.params().id
