@@ -1,13 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const models = require('./server/models');
 var request = require('request');
 const path = require('path');
 const http = require('http');
 
-
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
