@@ -1,4 +1,0 @@
-- C'est bien Loan !
-- tu pris le parti de ne pas du tout avoir de base de donnée: c'est bien d'exploiter l'API de tmdb mais tu aurais pu t'en servir pour récupérer les infos et les stocker dans une base à toi. Tu n'afficherai ainsi que les films enregistrés par l'utilsateur au lieu de récupérer à chaque fois les 10 premiers trouvés sur tmdb.
-- c'est bien d'avoir utilisé le module node **request** pour simplifier l'accès à l'API
-- pour accéder aux détails dans ton composant **hp** tu peux directement mettre un ui-sref dans le bouton pour éviter d'avoir à passer par une fonction du controller.
