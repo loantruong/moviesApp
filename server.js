@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const db = require('./models');
 var request = require('request');
 const path = require('path');
 const http = require('http');
@@ -72,6 +73,12 @@ app.get('/search', function (req, res, next) {
 app.get('/details/:id', function (req, res, next) {
   let id = req.params.id;
   detailsMovie(id, res);
+})
+
+db.sequelize.sync({
+  alter: true
+}).then(() => {
+  console.log('Database synchronized');
 })
 
 app.listen(port, () => {
