@@ -5,11 +5,16 @@ angular
 
     $stateProvider
       .state('home', {
-        url: '/home',
+        url: '/',
         component: 'hp',
         resolve: {
           popularMovies: (TMDbService) => TMDbService.getPopular()
         }
+      })
+      .state({
+        name: 'add',
+        url: '/add',
+        component: 'add'
       })
       .state('details', {
         url: '/details/:id',
@@ -23,5 +28,5 @@ angular
         }
       })
 
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/');
   });

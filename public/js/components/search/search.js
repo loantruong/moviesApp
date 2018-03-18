@@ -3,11 +3,12 @@ angular
 
     templateUrl: '/js/components/search/search.html',
 
-    controller: function (TMDbService, $log, $state) {
+    controller: function (MoviesService, TMDbService, $log, $state) {
       'ngInject';
 
       this.$onInit = () => {
         $log.info('search component init');
+        this.movie = new MoviesService();
       };
 
       this.getMovies = (searchMovie) => {

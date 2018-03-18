@@ -1,0 +1,29 @@
+
+<div class="container">
+  <form ng-submit="$ctrl.search(search)">
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="search" placeholder="Search movie...">
+  </div>
+</form>
+<form ng-submit="$ctrl.submit()">
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" class="form-control" ng-model="$ctrl.movie.title">
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <textarea class="form-control" ng-model="$ctrl.movie.description"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Date</label>
+    <input type="text" class="form-control" ng-model="$ctrl.movie.date">
+  </div>
+  <div class="form-group">
+    <label>Image (url)</label>
+    <input type="text" class="form-control" ng-model="$ctrl.movie.image">
+  </div>
+  <hr>
+  <button type="submit" class="btn btn-success">Valider</button>
+  <button type="button" class="btn btn-success" ui-sref="home">Annuler</button>
+</form>
+</div>

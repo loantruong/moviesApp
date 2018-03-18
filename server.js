@@ -33,20 +33,6 @@ function listFilm(movie, expressResponse) {
   });
 }
 
-function detailsMovie(id, expressResponse) {
-  request({
-    url: `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`,
-    method: 'GET',
-    limit: 10
-  }, function (err, res, body) {
-    if (err) {
-      return expressResponse.json(err);
-    } else {
-      return expressResponse.json(JSON.parse(body));
-    }
-  });
-}
-
 function popularMovies(expressResponse) {
   request({
     url: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`,
@@ -76,7 +62,7 @@ app.get('/details/:id', function (req, res, next) {
 })
 
 db.sequelize.sync({
-  alter: true
+  alter: false
 }).then(() => {
   console.log('Database synchronized');
 })
